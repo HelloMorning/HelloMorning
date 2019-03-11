@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Everyday</title>
+    <!--背景-->
+   
+       <style>
+    body {
+
+/* 加载背景图 */
+
+background-image: url(http://api.tuzi.la/ecy.php);
+
+ 
+
+/* 背景图垂直、水平均居中 */
+
+background-position: center center;
+
+ 
+
+/* 背景图不平铺 */
+
+background-repeat: no-repeat;
+
+ 
+
+/* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+
+background-attachment: fixed;
+
+ 
+
+/* 让背景图基于容器大小伸缩 */
+
+background-size: cover;
+
+ 
+
+/* 设置背景颜色，背景图加载过程中会显示背景色 */
+
+background-color: #464646;
+
+}</style>
+  
+    <!--全屏按钮-->
+    <script type="text/javascript">
+        //进入全屏
+        function enterFullScreen() {
+            var de = document.documentElement;
+            if (de.requestFullscreen) {
+                de.requestFullscreen();
+            } else if (de.mozRequestFullScreen) {
+                de.mozRequestFullScreen();
+            } else if (de.webkitRequestFullScreen) {
+                de.webkitRequestFullScreen();
+            }
+        }
+        //退出全屏
+        function exitFullScreen() {
+            var de = document;
+            if (de.exitFullscreen) {
+                de.exitFullscreen();
+            } else if (de.mozCancelFullScreen) {
+                de.mozCancelFullScreen();
+            } else if (de.webkitCancelFullScreen) {
+                de.webkitCancelFullScreen();
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+
+    <div style="position:absolute; left:0px; top:0px; z-index:101;">
+        <!--全屏按钮-->
+        <div>
+            <a href="javascript:;" onclick="enterFullScreen()">进入全屏</a>
+            &nbsp;
+            <a href="javascript:;" onclick="exitFullScreen()">退出全屏</a>
+        </div>
+
+    </div>
+
+    <div style="position:relative;z-index:-1;">
+        <!--图片-->
+        <div>
+            background-image: url(http://api.tuzi.la/ecy.php);
+        </div>
+
+        <div style="position:absolute; left:0px; top:0px; z-index:102;">
+
+            <!--nest 动态-->
+            <script src="js/canvas-nest.js" type="text/javascript" color="33,47,108" opacity="0.7" count="100"></script>
+
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>
