@@ -47,78 +47,7 @@
     <div class="container">
        <!--这里插入图片-->
        
-        <input type="button" id="fullscreenbtn" value="全屏模式" onclick="goF11()" />
-        <script type="text/javascript">
-            // fullScreen
-            function launchFullScreen(element) {
-                if (element.requestFullScreen) {
-                    element.requestFullScreen();
-                } else if (element.mozRequestFullScreen) {
-                    element.mozRequestFullScreen();
-                } else if (element.webkitRequestFullScreen) {
-                    element.webkitRequestFullScreen();
-                } else if (element.msRequestFullScreen) {
-                    element.msRequestFullScreen();
-                } else {
-                    return true;
-                }
-            }
 
-            function cancelFullScreen() {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.mozCancelFullScreen) {
-                    document.mozCancelFullScreen();
-                } else if (document.webkitCancelFullScreen) {
-                    document.webkitCancelFullScreen();
-                } else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
-                } else {
-                    return true;
-                }
-            }
-
-            var obj = document.getElementById("fullscreenbtn"),
-                view = document.getElementsByClassName("container")[0];
-
-
-          function escFullScreen() {
-                if (!document.fullscreenElement &&
-                    !document.mozFullScreenElement &&
-                    !document.webkitFullscreenElement &&
-                    !document.msFullscreenElement) {
-                    obj.value = '全屏模式';
-                    obj.setAttribute('style', "");
-                }
-            }
-
-            document.addEventListener && (document.addEventListener('webkitfullscreenchange', escFullScreen, false) ||
-            document.addEventListener('mozfullscreenchange', escFullScreen, false) ||
-            document.addEventListener('fullscreenchange', escFullScreen, false) ||
-            document.addEventListener('webkitfullscreenchange', escFullScreen, false));
-
-            document.attachEvent && document.attachEvent('msfullscreenchange', escFullScreen);
-
-            function goF11() {
-
-                if (obj.value == "全屏模式") {
-                    if (launchFullScreen(view)) {
-                        alert("浏览器不支持");
-                    } else {
-                        obj.setAttribute('style', "position:absolute;top:10px;left:20px;"); ;
-                        obj.value = '退出全屏';
-                    }
-                } else {
-                    if (cancelFullScreen()) {
-                        alert("你的浏览器，不支持哦");
-                    } else {
-                        obj.value = '全屏模式';
-                        obj.setAttribute('style', "");
-                    }
-                }
-            }
-        </script>
-        
   <!--图片-->
   <div>
     <img class="img" src="http://api.mtyqx.cn/tapi/random.php" />
